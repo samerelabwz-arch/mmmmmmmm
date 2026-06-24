@@ -1,0 +1,1925 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مركز كيريازي لخدمة العملاء - صيانة الأجهزة المنزلية</title>
+    <link rel="icon" href="https://kiriazi-care.com/wp-content/uploads/2026/02/%D8%B5%D9%8A%D8%A7%D9%86%D8%A9-%D9%83%D8%B1%D9%8A%D8%A7%D8%B2%D9%89-1-e1770820821203.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/@fontsource/cairo@4.5.10/index.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a7a4c;
+            --primary-dark: #0f5c38;
+            --primary-light: #2d9a62;
+            --secondary: #2c3e50;
+            --accent: #27ae60;
+            --light: #f8f9fa;
+            --dark: #1a1a2e;
+            --gold: #f39c12;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            overflow-x: hidden;
+            background: #fff;
+            color: #333;
+        }
+
+        .top-bar {
+            background: var(--dark);
+            color: #fff;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .top-bar a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .top-bar a:hover {
+            color: var(--gold);
+        }
+
+        .top-bar .info-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-left: 20px;
+        }
+
+        .top-bar .info-item i {
+            color: var(--gold);
+        }
+
+        .top-bar .social-links a {
+            width: 30px;
+            height: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            margin-right: 5px;
+            transition: all 0.3s;
+        }
+
+        .top-bar .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .navbar {
+            background: #fff;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            padding: 10px 0;
+            transition: all 0.3s;
+        }
+
+        .navbar.scrolled {
+            padding: 5px 0;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .navbar-brand .logo-img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.3s;
+        }
+
+        .navbar-brand:hover .logo-img {
+            transform: scale(1.05);
+        }
+
+        .navbar-brand .brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar-brand .brand-text .brand-name {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        .navbar-brand .brand-text .brand-sub {
+            font-size: 11px;
+            color: #666;
+        }
+
+        .nav-link {
+            color: var(--secondary) !important;
+            font-weight: 600;
+            font-size: 15px;
+            padding: 8px 15px !important;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 15px;
+            width: 0;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 2px;
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: calc(100% - 30px);
+        }
+
+        .nav-link:hover {
+            color: var(--primary) !important;
+        }
+
+        .hotline-btn {
+            background: var(--primary);
+            color: #fff !important;
+            padding: 10px 25px !important;
+            border-radius: 50px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            animation: pulse-btn 2s infinite;
+        }
+
+        .hotline-btn::after {
+            display: none !important;
+        }
+
+        .hotline-btn:hover {
+            background: var(--primary-dark) !important;
+            color: #fff !important;
+            transform: scale(1.05);
+        }
+
+        @keyframes pulse-btn {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(26, 122, 76, 0.4); }
+            50% { box-shadow: 0 0 0 15px rgba(26, 122, 76, 0); }
+        }
+
+        .hero-slider {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-slide {
+            position: relative;
+            height: 600px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(26,26,46,0.85) 0%, rgba(26,122,76,0.6) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+        }
+
+        .hero-content .badge-text {
+            display: inline-block;
+            background: var(--primary);
+            color: #fff;
+            padding: 8px 25px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            animation: fadeInDown 0.8s;
+        }
+
+        .hero-content h1 {
+            font-size: 52px;
+            font-weight: 900;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s;
+        }
+
+        .hero-content h1 span {
+            color: var(--gold);
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .hero-logo-overlay {
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            transform: translateY(-50%);
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .hero-logo-container {
+            position: relative;
+            width: 280px;
+            height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-logo-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(26,122,76,0.3) 0%, transparent 70%);
+            animation: logo-glow 3s ease-in-out infinite;
+        }
+
+        .hero-logo-container::after {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            border: 2px dashed rgba(255,255,255,0.3);
+            border-radius: 50%;
+            animation: rotate-border 20s linear infinite;
+        }
+
+        .hero-logo-img {
+            width: 220px;
+            height: 220px;
+            object-fit: contain;
+            filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));
+            animation: logo-float 4s ease-in-out infinite, logo-rotate 8s ease-in-out infinite;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo-ring {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid rgba(26,122,76,0.5);
+            animation: ring-pulse 3s ease-out infinite;
+        }
+
+        .logo-ring:nth-child(1) {
+            width: 240px;
+            height: 240px;
+            animation-delay: 0s;
+        }
+
+        .logo-ring:nth-child(2) {
+            width: 280px;
+            height: 280px;
+            animation-delay: 1s;
+        }
+
+        .logo-ring:nth-child(3) {
+            width: 320px;
+            height: 320px;
+            animation-delay: 2s;
+        }
+
+        @keyframes logo-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes logo-rotate {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+
+        @keyframes logo-glow {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+
+        @keyframes rotate-border {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes ring-pulse {
+            0% { transform: scale(0.8); opacity: 1; }
+            100% { transform: scale(1.3); opacity: 0; }
+        }
+
+        .btn-primary-custom {
+            background: var(--primary);
+            color: #fff;
+            padding: 14px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-primary-custom:hover {
+            background: var(--primary-dark);
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(26,122,76,0.4);
+        }
+
+        .btn-outline-custom {
+            background: transparent;
+            color: #fff;
+            padding: 14px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            border: 2px solid #fff;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-outline-custom:hover {
+            background: #fff;
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.4);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .slider-dot.active {
+            background: var(--primary);
+            width: 35px;
+            border-radius: 6px;
+        }
+
+        .contact-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+            position: relative;
+            border-bottom: 4px solid var(--primary);
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
+        }
+
+        .contact-section .section-header {
+            margin-bottom: 50px;
+        }
+
+        .contact-section .urgent-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: #fff;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            animation: pulse-badge 2s infinite;
+        }
+
+        @keyframes pulse-badge {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(26, 122, 76, 0.4); }
+            50% { box-shadow: 0 0 0 15px rgba(26, 122, 76, 0); }
+        }
+
+        .contact-info-card {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 20px;
+            padding: 40px 30px;
+            color: #fff;
+            height: 100%;
+        }
+
+        .contact-info-card h3 {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .contact-info-card p {
+            opacity: 0.9;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .contact-item .icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .contact-item .text h5 {
+            font-size: 14px;
+            font-weight: 600;
+            opacity: 0.8;
+            margin-bottom: 3px;
+        }
+
+        .contact-item .text p {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0;
+            opacity: 1;
+        }
+
+        .contact-form-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 15px 60px rgba(26,122,76,0.15);
+            height: 100%;
+            border: 2px solid rgba(26,122,76,0.1);
+        }
+
+        .contact-form-card h3 {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 25px;
+        }
+
+        .contact-form-card .form-note {
+            background: rgba(26,122,76,0.08);
+            border: 1px solid rgba(26,122,76,0.2);
+            border-radius: 12px;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            color: var(--primary-dark);
+        }
+
+        .contact-form-card .form-note i {
+            color: #25d366;
+            font-size: 20px;
+        }
+
+        .form-control {
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 14px 18px;
+            font-family: 'Cairo', sans-serif;
+            transition: all 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(26,122,76,0.1);
+        }
+
+        .form-label {
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 8px;
+        }
+
+        .btn-submit {
+            background: #25d366;
+            color: #fff;
+            padding: 14px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            border: none;
+            width: 100%;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-submit:hover {
+            background: #1da851;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(37,211,102,0.3);
+        }
+
+        .btn-submit i {
+            font-size: 20px;
+        }
+
+        .services-section {
+            padding: 80px 0;
+            background: var(--light);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header .section-badge {
+            display: inline-block;
+            background: rgba(26,122,76,0.1);
+            color: var(--primary);
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .section-header h2 {
+            font-size: 40px;
+            font-weight: 900;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .section-header h2 span {
+            color: var(--primary);
+        }
+
+        .section-header p {
+            font-size: 16px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .service-card .card-img {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .service-card .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .service-card:hover .card-img img {
+            transform: scale(1.1);
+        }
+
+        .service-card .card-img .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(26,122,76,0.8), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 20px;
+        }
+
+        .service-card:hover .card-img .overlay {
+            opacity: 1;
+        }
+
+        .service-card .card-body {
+            padding: 25px;
+        }
+
+        .service-card .card-body .icon-box {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 24px;
+            margin-bottom: 15px;
+            margin-top: -50px;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 5px 20px rgba(26,122,76,0.3);
+        }
+
+        .service-card .card-body h4 {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .service-card .card-body p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .service-card .card-body .read-more {
+            color: var(--primary);
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 10px;
+            transition: gap 0.3s;
+        }
+
+        .service-card .card-body .read-more:hover {
+            gap: 12px;
+        }
+
+        .about-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .about-img-wrapper {
+            position: relative;
+        }
+
+        .about-img-wrapper img {
+            border-radius: 20px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .about-img-wrapper .experience-badge {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background: var(--primary);
+            color: #fff;
+            padding: 25px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(26,122,76,0.4);
+        }
+
+        .about-img-wrapper .experience-badge .number {
+            font-size: 48px;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .about-img-wrapper .experience-badge .text {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .about-content h2 {
+            font-size: 38px;
+            font-weight: 900;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .about-content h2 span {
+            color: var(--primary);
+        }
+
+        .about-content p {
+            color: #666;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        .about-features {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0;
+        }
+
+        .about-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .about-features li i {
+            width: 30px;
+            height: 30px;
+            background: rgba(26,122,76,0.1);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .why-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--secondary) 100%);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: rgba(26,122,76,0.1);
+            border-radius: 50%;
+        }
+
+        .why-section .section-header h2 {
+            color: #fff;
+        }
+
+        .why-section .section-header p {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .why-section .section-header .section-badge {
+            background: rgba(26,122,76,0.3);
+            color: #fff;
+        }
+
+        .why-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.3s;
+            height: 100%;
+        }
+
+        .why-card:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-5px);
+        }
+
+        .why-card .icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+            color: #fff;
+        }
+
+        .why-card h4 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .why-card p {
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .stats-section {
+            padding: 60px 0;
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .stat-item .stat-number {
+            font-size: 48px;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .stat-item .stat-label {
+            font-size: 16px;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        .footer {
+            background: var(--dark);
+            color: #fff;
+            padding: 60px 0 0;
+        }
+
+        .footer h5 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .footer h5::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .footer p {
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-right: 10px;
+        }
+
+        .footer-links a i {
+            font-size: 12px;
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 20px 0;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 9999;
+        }
+
+        .whatsapp-float a {
+            width: 65px;
+            height: 65px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 32px;
+            text-decoration: none;
+            box-shadow: 0 5px 25px rgba(37,211,102,0.4);
+            animation: whatsapp-pulse 2s infinite;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-float a:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes whatsapp-pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+            50% { box-shadow: 0 0 0 20px rgba(37,211,102,0); }
+        }
+
+        .whatsapp-tooltip {
+            position: absolute;
+            bottom: 75px;
+            left: 0;
+            background: #fff;
+            color: #333;
+            padding: 10px 18px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            white-space: nowrap;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s;
+            pointer-events: none;
+        }
+
+        .whatsapp-float:hover .whatsapp-tooltip {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hotline-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+        }
+
+        .hotline-float a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--primary);
+            color: #fff;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            box-shadow: 0 5px 25px rgba(26,122,76,0.4);
+            transition: all 0.3s;
+        }
+
+        .hotline-float a:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        .hotline-float a i {
+            animation: ring 1.5s infinite;
+        }
+
+        @keyframes ring {
+            0%, 100% { transform: rotate(0); }
+            10%, 30% { transform: rotate(-15deg); }
+            20%, 40% { transform: rotate(15deg); }
+            50% { transform: rotate(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 992px) {
+            .hero-logo-overlay {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-slide {
+                height: 500px;
+            }
+            .hero-content h1 {
+                font-size: 32px;
+            }
+            .hero-content p {
+                font-size: 15px;
+            }
+            .section-header h2 {
+                font-size: 28px;
+            }
+            .about-content h2 {
+                font-size: 28px;
+            }
+            .stat-item .stat-number {
+                font-size: 36px;
+            }
+            .hotline-float a {
+                padding: 12px 18px;
+                font-size: 15px;
+            }
+            .whatsapp-float a {
+                width: 55px;
+                height: 55px;
+                font-size: 28px;
+            }
+            .navbar-brand .logo-img {
+                height: 45px;
+            }
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 110px;
+            left: 30px;
+            width: 45px;
+            height: 45px;
+            background: var(--secondary);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 999;
+            border: none;
+            font-size: 18px;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .marquee-section {
+            background: var(--primary);
+            padding: 15px 0;
+            overflow: hidden;
+        }
+
+        .marquee-wrapper {
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .marquee-content {
+            display: inline-flex;
+            animation: marquee-ltr 45s linear infinite;
+            white-space: nowrap;
+        }
+
+        .marquee-content span {
+            color: #fff;
+            font-weight: 700;
+            font-size: 16px;
+            padding: 0 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .marquee-content span i {
+            color: var(--gold);
+        }
+
+        @keyframes marquee-ltr {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .cta-banner {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            padding: 60px 0;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+
+        .cta-banner::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            right: -5%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+
+        .cta-banner h2 {
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-banner p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-banner .btn-cta {
+            background: #fff;
+            color: var(--primary);
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 18px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-banner .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <div>
+                    <span class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:19387">الخط الساخن: 19387</a>
+                    </span>
+                    <span class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@kiriazi.com">info@kiriazi.com</a>
+                    </span>
+                    <span class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <span>السبت - الخميس: 9 صباحاً - 9 مساءً</span>
+                    </span>
+                </div>
+                <div class="social-links d-none d-md-block">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://kiriazi-care.com/wp-content/uploads/2026/02/%D8%B5%D9%8A%D8%A7%D9%86%D8%A9-%D9%83%D8%B1%D9%8A%D8%A7%D8%B2%D9%89-1-e1770820821203.png" alt="كيريازي" class="logo-img">
+                <div class="brand-text">
+                    <span class="brand-name">كيريازي</span>
+                    <span class="brand-sub">مركز خدمة العملاء المعتمد</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">تواصل معنا</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">خدماتنا</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">من نحن</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#why">لماذا نحن</a></li>
+                </ul>
+                <a href="tel:19387" class="hotline-btn nav-link">
+                    <i class="fas fa-phone-alt"></i>
+                    19387
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-slider" id="home">
+        <div class="hero-slide active" style="background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEin8Q10e02J7Eu0lzg-amKRDrgutVWUro0-QzOyYpeWhvws6BxCrZgR6g9dXSZV67BXmqLCjTc0evRGlQY7OaS_zy6bXqzcjdtCfhOKLONXTd7-Q8fMSrF6TmoHSqE2nIpRgwjKqpmLnff5/s1600/1.jpg');">
+            <div class="hero-logo-overlay">
+                <div class="hero-logo-container">
+                    <div class="logo-ring"></div>
+                    <div class="logo-ring"></div>
+                    <div class="logo-ring"></div>
+                    <img src="https://kiriazi-care.com/wp-content/uploads/2026/02/%D8%B5%D9%8A%D8%A7%D9%86%D8%A9-%D9%83%D8%B1%D9%8A%D8%A7%D8%B2%D9%89-1-e1770820821203.png" alt="كيريازي" class="hero-logo-img">
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="hero-content">
+                    <span class="badge-text">?? مركز الصيانة المعتمد</span>
+                    <h1>صيانة <span>الأجهزة المنزلية</span><br>بأعلى معايير الجودة</h1>
+                    <p>نقدم خدمات صيانة شاملة لجميع الأجهزة المنزلية بأيدي فنيين متخصصين ومعتمدين مع ضمان حقيقي على جميع أعمال الصيانة</p>
+                    <div class="hero-btns">
+                        <a href="#contact" class="btn-primary-custom">
+                            <i class="fas fa-paper-plane"></i>
+                            طلب صيانة الآن
+                        </a>
+                        <a href="tel:19387" class="btn-outline-custom">
+                            <i class="fas fa-phone-alt"></i>
+                            اتصل: 19387
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-dots">
+            <div class="slider-dot active" data-slide="0"></div>
+            <div class="slider-dot" data-slide="1"></div>
+            <div class="slider-dot" data-slide="2"></div>
+        </div>
+    </section>
+
+    <div class="marquee-section">
+        <div class="marquee-wrapper">
+            <div class="marquee-content">
+                <span><i class="fas fa-exclamation-triangle"></i> الشركة غير مسؤولة عن اي ارقام تنتحل صفة او تتحدث باسم كريازي</span>
+                <span><i class="fas fa-check-circle"></i> وان الرقم الموحد هو 19387 في مصر ??</span>
+                <span><i class="fas fa-exclamation-triangle"></i> الشركة غير مسؤولة عن اي ارقام تنتحل صفة او تتحدث باسم كريازي</span>
+                <span><i class="fas fa-check-circle"></i> وان الرقم الموحد هو 19387 في مصر ??</span>
+                <span><i class="fas fa-exclamation-triangle"></i> الشركة غير مسؤولة عن اي ارقام تنتحل صفة او تتحدث باسم كريازي</span>
+                <span><i class="fas fa-check-circle"></i> وان الرقم الموحد هو 19387 في مصر ??</span>
+                <span><i class="fas fa-exclamation-triangle"></i> الشركة غير مسؤولة عن اي ارقام تنتحل صفة او تتحدث باسم كريازي</span>
+                <span><i class="fas fa-check-circle"></i> وان الرقم الموحد هو 19387 في مصر ??</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="urgent-badge"><i class="fas fa-bolt"></i> طلب صيانة فوري</span>
+                <h2>اطلب <span>صيانة جهازك</span> الآن</h2>
+                <p>املأ البيانات التالية وسيتم تحويل طلبك مباشرة إلى فريق الدعم الفني على واتساب</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-5 fade-in">
+                    <div class="contact-info-card">
+                        <h3>معلومات التواصل</h3>
+                        <p>يمكنك التواصل معنا عبر أي من الطرق التالية وسنكون سعداء بخدمتك</p>
+                        <div class="contact-item">
+                            <div class="icon"><i class="fas fa-phone-alt"></i></div>
+                            <div class="text">
+                                <h5>الخط الساخن</h5>
+                                <p>19387</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="icon"><i class="fab fa-whatsapp"></i></div>
+                            <div class="text">
+                                <h5>واتساب</h5>
+                                <p>01102670999</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="icon"><i class="fas fa-envelope"></i></div>
+                            <div class="text">
+                                <h5>البريد الإلكتروني</h5>
+                                <p>info@kiriazi.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="text">
+                                <h5>العنوان</h5>
+                                <p>جميع محافظات جمهورية مصر العربية</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="icon"><i class="fas fa-clock"></i></div>
+                            <div class="text">
+                                <h5>ساعات العمل</h5>
+                                <p>السبت - الخميس: 9 ص - 9 م</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 fade-in">
+                    <div class="contact-form-card">
+                        <h3><i class="fab fa-whatsapp" style="color:#25d366;"></i> طلب صيانة عبر واتساب</h3>
+                        <div class="form-note">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>سيتم تحويل طلبك مباشرة إلى واتساب لسهولة التواصل مع فريق الدعم الفني</span>
+                        </div>
+                        <form id="contactForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">الاسم الكامل *</label>
+                                    <input type="text" id="fullName" class="form-control" placeholder="أدخل اسمك الكامل" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">رقم الهاتف *</label>
+                                    <input type="tel" id="phone" class="form-control" placeholder="أدخل رقم هاتفك" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">العنوان *</label>
+                                    <input type="text" id="address" class="form-control" placeholder="أدخل عنوانك بالتفصيل (المحافظة - المدينة - الشارع)" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">نوع الجهاز *</label>
+                                    <select id="deviceType" class="form-control" required>
+                                        <option value="">اختر نوع الجهاز</option>
+                                        <option value="غسالة">غسالة</option>
+                                        <option value="ثلاجة">ثلاجة</option>
+                                        <option value="تكييف">تكييف</option>
+                                        <option value="فرن / بوتاجاز">فرن / بوتاجاز</option>
+                                        <option value="غسالة أطباق">غسالة أطباق</option>
+                                        <option value="سخان">سخان</option>
+                                        <option value="ميكروويف">ميكروويف</option>
+                                        <option value="أخرى">أخرى</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">ماركة الجهاز</label>
+                                    <input type="text" id="brand" class="form-control" placeholder="مثال: كيريازي، سامسونج، إل جي...">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">الموديل (اختياري)</label>
+                                    <input type="text" id="model" class="form-control" placeholder="موديل الجهاز إن وُجد">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">وصف العطل بالتفصيل *</label>
+                                    <textarea id="problem" class="form-control" rows="4" placeholder="اشرح العطل أو المشكلة بالتفصيل حتى نتمكن من خدمتك بشكل أفضل..." required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn-submit">
+                                        <i class="fab fa-whatsapp"></i>
+                                        إرسال طلب الصيانة عبر واتساب
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-badge">خدماتنا المتميزة</span>
+                <h2>نقدم <span>أفضل خدمات</span> الصيانة</h2>
+                <p>نغطي جميع أنواع الأجهزة المنزلية بخدمات صيانة احترافية وسريعة</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <div class="service-card">
+                        <div class="card-img">
+                            <img src="https://image.qwenlm.ai/public_source/9959866e-4c01-4b8c-9859-e39cb0a8a5ac/11093e30b-975b-47f3-a7f4-efd90838a800.png" alt="صيانة الغسالات">
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="card-body">
+                            <div class="icon-box"><i class="fas fa-tshirt"></i></div>
+                            <h4>صيانة الغسالات</h4>
+                            <p>إصلاح جميع أنواع الغسالات الأوتوماتيك والعادية مع ضمان على قطع الغيار المستخدمة</p>
+                            <a href="#contact" class="read-more">اطلب الصيانة <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <div class="service-card">
+                        <div class="card-img">
+                            <img src="https://image.qwenlm.ai/public_source/9959866e-4c01-4b8c-9859-e39cb0a8a5ac/1a3bdd530-eb68-467c-8a28-9f38ab845223.png" alt="صيانة الثلاجات">
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="card-body">
+                            <div class="icon-box"><i class="fas fa-snowflake"></i></div>
+                            <h4>صيانة الثلاجات</h4>
+                            <p>صيانة وإصلاح جميع أنواع الثلاجات والفريزرات مع شحن فريون واستبدال قطع الغيار</p>
+                            <a href="#contact" class="read-more">اطلب الصيانة <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <div class="service-card">
+                        <div class="card-img">
+                            <img src="https://image.qwenlm.ai/public_source/9959866e-4c01-4b8c-9859-e39cb0a8a5ac/11fa89598-1e75-49b7-adea-62991662b903.png" alt="صيانة التكييفات">
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="card-body">
+                            <div class="icon-box"><i class="fas fa-wind"></i></div>
+                            <h4>صيانة التكييفات</h4>
+                            <p>تركيب وصيانة جميع أنواع التكييفات السبلت والشباك مع تنظيف وشحن فريون</p>
+                            <a href="#contact" class="read-more">اطلب الصيانة <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <div class="service-card">
+                        <div class="card-img">
+                            <img src="https://image.qwenlm.ai/public_source/9959866e-4c01-4b8c-9859-e39cb0a8a5ac/123c0ce46-0078-4c5a-89f9-411dfcf62e2c.png" alt="صيانة الأفران">
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="card-body">
+                            <div class="icon-box"><i class="fas fa-fire"></i></div>
+                            <h4>صيانة الأفران والبوتاجازات</h4>
+                            <p>إصلاح جميع أنواع الأفران الكهربائية والغاز والبوتاجازات بأحدث التقنيات</p>
+                            <a href="#contact" class="read-more">اطلب الصيانة <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <div class="service-card">
+                        <div class="card-img">
+                            <img src="https://image.qwenlm.ai/public_source/9959866e-4c01-4b8c-9859-e39cb0a8a5ac/1a3e4aede-2a57-4d8e-a64b-6cef57fc1c17.png" alt="صيانة غسالات الأطباق">
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="card-body">
+                            <div class="icon-box"><i class="fas fa-utensils"></i></div>
+                            <h4>صيانة غسالات الأطباق</h4>
+                            <p>صيانة وإصلاح غسالات الأطباق بجميع أنواعها مع ضمان شامل على الخدمة</p>
+                            <a href="#contact" class="read-more">اطلب الصيانة <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <div class="service-card">
+                        <div class="card-img">
+                            <img src="https://image.qwenlm.ai/public_source/9959866e-4c01-4b8c-9859-e39cb0a8a5ac/1e194b964-b73c-43e7-823f-ec7104257331.png" alt="صيانة شاملة">
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="card-body">
+                            <div class="icon-box"><i class="fas fa-tools"></i></div>
+                            <h4>صيانة شاملة</h4>
+                            <p>نقدم خدمات صيانة شاملة لجميع الأجهزة المنزلية الأخرى مثل الميكروويف والخلاطات</p>
+                            <a href="#contact" class="read-more">اطلب الصيانة <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 fade-in">
+                    <div class="about-img-wrapper">
+                        <img src="https://image.qwenlm.ai/public_source/9959866e-4c01-4b8c-9859-e39cb0a8a5ac/1a3bdd530-eb68-467c-8a28-9f38ab845223.png" alt="من نحن">
+                        <div class="experience-badge">
+                            <div class="number">+20</div>
+                            <div class="text">عاماً من الخبرة</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 fade-in">
+                    <div class="about-content">
+                        <span class="section-badge" style="display:inline-block; background:rgba(26,122,76,0.1); color:var(--primary); padding:6px 20px; border-radius:50px; font-size:14px; font-weight:600; margin-bottom:15px;">من نحن</span>
+                        <h2>مركز <span>كيريازي</span> لخدمة العملاء</h2>
+                        <p>نحن مركز معتمد ومتخصص في صيانة جميع الأجهزة المنزلية بأعلى معايير الجودة والاحترافية. نمتلك فريقاً من الفنيين المدربين والمعتمدين الذين يمتلكون خبرة واسعة في مجال الصيانة.</p>
+                        <p>نلتزم بتقديم خدمة متميزة وسريعة لعملائنا مع استخدام قطع غيار أصلية 100% وتقديم ضمان حقيقي على جميع أعمال الصيانة.</p>
+                        <ul class="about-features">
+                            <li><i class="fas fa-check"></i> فنيون معتمدون ومدربون على أعلى مستوى</li>
+                            <li><i class="fas fa-check"></i> قطع غيار أصلية بضمان المصنع</li>
+                            <li><i class="fas fa-check"></i> خدمة سريعة في نفس اليوم</li>
+                            <li><i class="fas fa-check"></i> أسعار تنافسية وشفافة</li>
+                            <li><i class="fas fa-check"></i> ضمان شامل على جميع الأعمال</li>
+                        </ul>
+                        <a href="#contact" class="btn-primary-custom">
+                            <i class="fas fa-paper-plane"></i>
+                            اطلب صيانة الآن
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-section" id="why">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-badge">لماذا تختارنا</span>
+                <h2>لماذا <span style="color:var(--gold);">مركز كيريازي</span>؟</h2>
+                <p>نتميز بالعديد من المزايا التي تجعلنا الخيار الأول لعملائنا</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 fade-in">
+                    <div class="why-card">
+                        <div class="icon"><i class="fas fa-certificate"></i></div>
+                        <h4>مركز معتمد</h4>
+                        <p>مركز صيانة معتمد رسمياً من كبرى الشركات العالمية</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 fade-in">
+                    <div class="why-card">
+                        <div class="icon"><i class="fas fa-clock"></i></div>
+                        <h4>خدمة سريعة</h4>
+                        <p>نصل إليك في أسرع وقت ممكن خلال نفس اليوم</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 fade-in">
+                    <div class="why-card">
+                        <div class="icon"><i class="fas fa-shield-alt"></i></div>
+                        <h4>ضمان حقيقي</h4>
+                        <p>نقدم ضمان شامل على جميع أعمال الصيانة وقطع الغيار</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 fade-in">
+                    <div class="why-card">
+                        <div class="icon"><i class="fas fa-hand-holding-usd"></i></div>
+                        <h4>أسعار منافسة</h4>
+                        <p>أسعار شفافة وتنافسية بدون أي رسوم خفية</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="25000">0</div>
+                        <div class="stat-label">عميل سعيد</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="150">0</div>
+                        <div class="stat-label">فني متخصص</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="20">0</div>
+                        <div class="stat-label">عام خبرة</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="50">0</div>
+                        <div class="stat-label">فرع على مستوى الجمهورية</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-banner">
+        <div class="container">
+            <h2>تحتاج صيانة لجهازك المنزلي؟</h2>
+            <p>اتصل الآن بالخط الساخن واحصل على خدمة فورية من أفضل الفنيين</p>
+            <a href="tel:19387" class="btn-cta">
+                <i class="fas fa-phone-alt"></i>
+                اتصل الآن: 19387
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <img src="https://kiriazi-care.com/wp-content/uploads/2026/02/%D8%B5%D9%8A%D8%A7%D9%86%D8%A9-%D9%83%D8%B1%D9%8A%D8%A7%D8%B2%D9%89-1-e1770820821203.png" alt="كيريازي" style="height:60px; width:auto;">
+                        <div>
+                            <h4 style="color:#fff;margin:0;font-size:22px;">كيريازي</h4>
+                            <small style="color:rgba(255,255,255,0.6);">مركز خدمة العملاء</small>
+                        </div>
+                    </div>
+                    <p>مركز كيريازي لخدمة العملاء هو مركز معتمد ومتخصص في صيانة جميع الأجهزة المنزلية بأعلى معايير الجودة والاحترافية.</p>
+                    <div class="d-flex gap-2 mt-3">
+                        <a href="#" style="width:40px;height:40px;background:rgba(255,255,255,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;transition:all 0.3s;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="width:40px;height:40px;background:rgba(255,255,255,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;transition:all 0.3s;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="width:40px;height:40px;background:rgba(255,255,255,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;transition:all 0.3s;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="width:40px;height:40px;background:rgba(255,255,255,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;transition:all 0.3s;"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5>روابط سريعة</h5>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-chevron-left"></i> الرئيسية</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-left"></i> تواصل معنا</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-left"></i> خدماتنا</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-left"></i> من نحن</a></li>
+                        <li><a href="#why"><i class="fas fa-chevron-left"></i> لماذا نحن</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5>خدماتنا</h5>
+                    <ul class="footer-links">
+                        <li><a href="#services"><i class="fas fa-chevron-left"></i> صيانة الغسالات</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-left"></i> صيانة الثلاجات</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-left"></i> صيانة التكييفات</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-left"></i> صيانة الأفران</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-left"></i> صيانة غسالات الأطباق</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5>تواصل معنا</h5>
+                    <ul class="footer-links">
+                        <li><a href="tel:19387"><i class="fas fa-phone-alt"></i> الخط الساخن: 19387</a></li>
+                        <li><a href="https://wa.me/201102670999" target="_blank"><i class="fab fa-whatsapp"></i> واتساب: 01102670999</a></li>
+                        <li><a href="mailto:info@kiriazi.com"><i class="fas fa-envelope"></i> info@kiriazi.com</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> جميع المحافظات</a></li>
+                        <li><a href="#"><i class="fas fa-clock"></i> السبت - الخميس: 9ص - 9م</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 مركز كيريازي لخدمة العملاء. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="whatsapp-float">
+        <div class="whatsapp-tooltip">تواصل معنا عبر واتساب</div>
+        <a href="https://wa.me/201102670999" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <div class="hotline-float">
+        <a href="tel:19387">
+            <i class="fas fa-phone-alt"></i>
+            19387
+        </a>
+    </div>
+
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            const scrollTop = document.getElementById('scrollTop');
+            
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+                scrollTop.classList.add('visible');
+            } else {
+                navbar.classList.remove('scrolled');
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        document.getElementById('scrollTop').addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        fadeElements.forEach(el => observer.observe(el));
+
+        const statNumbers = document.querySelectorAll('.stat-number');
+        const counterObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = parseInt(entry.target.getAttribute('data-target'));
+                    animateCounter(entry.target, target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        statNumbers.forEach(num => counterObserver.observe(num));
+
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 60;
+            const timer = setInterval(function() {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current).toLocaleString('ar-EG') + '+';
+            }, 30);
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarCollapse.classList.contains('show')) {
+                        bootstrap.Collapse.getInstance(navbarCollapse).hide();
+                    }
+                }
+            });
+        });
+
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const fullName = document.getElementById('fullName').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const address = document.getElementById('address').value.trim();
+            const deviceType = document.getElementById('deviceType').value;
+            const brand = document.getElementById('brand').value.trim();
+            const model = document.getElementById('model').value.trim();
+            const problem = document.getElementById('problem').value.trim();
+            
+            if (!fullName || !phone || !address || !deviceType || !problem) {
+                alert('من فضلك أكمل جميع الحقول المطلوبة (*)');
+                return;
+            }
+            
+            let whatsappMessage = `?? *طلب صيانة جديد - مركز كيريازي*\n`;
+            whatsappMessage += `??????????????????\n\n`;
+            whatsappMessage += `?? *الاسم:* ${fullName}\n`;
+            whatsappMessage += `?? *رقم الهاتف:* ${phone}\n`;
+            whatsappMessage += `?? *العنوان:* ${address}\n\n`;
+            whatsappMessage += `?? *نوع الجهاز:* ${deviceType}\n`;
+            
+            if (brand) {
+                whatsappMessage += `??? *الماركة:* ${brand}\n`;
+            }
+            
+            if (model) {
+                whatsappMessage += `?? *الموديل:* ${model}\n`;
+            }
+            
+            whatsappMessage += `\n?? *وصف العطل:*\n${problem}\n`;
+            whatsappMessage += `\n??????????????????\n`;
+            whatsappMessage += `? *تاريخ الطلب:* ${new Date().toLocaleDateString('ar-EG')}\n`;
+            whatsappMessage += `?? *الوقت:* ${new Date().toLocaleTimeString('ar-EG')}`;
+            
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            const whatsappNumber = '201102670999';
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            
+            window.open(whatsappURL, '_blank');
+            this.reset();
+        });
+
+        document.querySelectorAll('.slider-dot').forEach(dot => {
+            dot.addEventListener('click', function() {
+                document.querySelectorAll('.slider-dot').forEach(d => d.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
+
